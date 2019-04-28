@@ -1,0 +1,94 @@
+{% extends 'topologia/base.html' %}
+
+{% block content %}
+    <h2>Informe os componentes da sua rede:</h2>
+	<p><li style="list-style-type: none;"><hr style="height:1px; border:none; color:#000; background-color:#000; margin-top: 0px; margin-bottom: 0px;"/></li></p>
+    <br><form method="POST" class="post-form">{% csrf_token %}
+		<div class="fieldWrapper">
+			<table border="0" height=100>
+			<tr>
+			{{ form.NomeRede.errors }}
+			<td style="width:150px"><label for = "NomeRede">Nome da Rede: </label> </td>
+			<td style="width:150px">{{ form.NomeRede }}</td>
+			</tr>
+			<tr>
+			<td style="height:50px"></td> 
+			</tr>
+			<tr>
+			<td ALIGN=RIGHT style="height:50px">Roteador 1</td> 
+			<td style="height:50px"></td> 
+			<td ALIGN=RIGHT style="width:150px">Roteador 2</td> 
+			</tr>
+			<tr>
+			{{ form.RoteadorIP1.errors }}
+			<td ALIGN=RIGHT><label for = "RoteadorIP1">  IP: </label></td> 
+			<td>{{ form.RoteadorIP1 }}</td>
+ 
+			<td ALIGN=RIGHT><label for = "RoteadorIP2">  IP: </label></td> 
+			<td>{{ form.RoteadorIP2 }}</td>
+			</tr>
+		    <tr>
+			{{ form.RoteadorNetmask1.errors }}
+			<td ALIGN=RIGHT><label for = "RoteadorNetmask1">Máscara de rede: </label></td> 
+			<td>{{ form.RoteadorNetmask1 }}</td>
+			<td ALIGN=RIGHT  style="width:150px"><label for = "RoteadorNetmask2">Máscara de rede: </label></td> 
+			<td>{{ form.RoteadorNetmask2 }}</td>
+			</tr>
+			<tr>
+			<td ALIGN=RIGHT style="height:50px">Host 1:</td> 
+			<td style="height:50px"></td> 
+			<td ALIGN=RIGHT style="height:50px">Host 3:</td> 
+
+			<tr>
+			{{ form.HostIP1.errors }}
+			<td ALIGN=RIGHT><label for = "HostIP1">IP: </label></td> 
+			<td>{{ form.HostIP1 }}</td>
+			<td ALIGN=RIGHT><label for = "HostIP3">IP: </label></td> 
+			<td>{{ form.HostIP3 }}</td>
+			</tr>
+		    <tr>
+			{{ form.HostNetmask1.errors }}
+			<td ALIGN=RIGHT><label for = "HostNetmask1">Máscara de rede: </label></td> 
+			<td>{{ form.HostNetmask1 }}</td>
+			<td ALIGN=RIGHT><label for = "HostNetmask3">Máscara de rede: </label></td> 
+			<td>{{ form.HostNetmask3 }}</td>
+			</tr>
+		    <tr>
+			{{ form.HostGateway1.errors }}
+			<td ALIGN=RIGHT><label for = "HostGateway1">Gateway: </label></td> 
+			<td>{{ form.HostGateway1 }}</td>
+			<td ALIGN=RIGHT><label for = "HostGateway3">Gateway: </label></td> 
+			<td>{{ form.HostGateway3 }}</td>
+			</tr>
+		    <tr>
+			<td ALIGN=RIGHT style="height:50px">Host 2:</td> 
+			<td style="height:50px"></td> 
+			<td ALIGN=RIGHT style="height:50px">Host 4:</td> 
+			<tr>
+			{{ form.HostIP2.errors }}
+			<td ALIGN=RIGHT><label for = "HostIP2">IP: </label></td> 
+			<td>{{ form.HostIP2 }}</td>
+			<td ALIGN=RIGHT><label for = "HostIP4">IP: </label></td> 
+			<td>{{ form.HostIP4 }}</td>
+			</tr>
+		    <tr>
+			{{ form.HostNetmask2.errors }}
+			<td ALIGN=RIGHT><label for = "HostNetmask2">Máscara de rede: </label></td> 
+			<td>{{ form.HostNetmask2 }}</td>
+			<td ALIGN=RIGHT><label for = "HostNetmask4">Máscara de rede: </label></td> 
+			<td>{{ form.HostNetmask4 }}</td>
+			</tr>
+		    <tr>
+			{{ form.HostGateway2.errors }}
+			<td ALIGN=RIGHT><label for = "HostGateway2">Gateway: </label></td> 
+			<td>{{ form.HostGateway2 }}</td>
+			<td ALIGN=RIGHT><label for = "HostGateway4">Gateway: </label></td> 
+			<td>{{ form.HostGateway4 }}</td>
+			</tr>
+			</table>			
+		</div>
+		<br><br><br>
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+
+{% endblock %}
